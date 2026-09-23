@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Барбершоп «Бородинский»</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=latin,cyrillic">
     <link href="css/normalize.css" rel="stylesheet">
@@ -10,7 +11,7 @@
 </head>
 
 <body>
-    
+
     <header class="main-header">
         <nav class="main-navigation">
             <a class="main-header-logo">
@@ -19,26 +20,14 @@
             <div class="main-navigation-wrapper">
                 <div class="container">
                     <ul class="site-navigation">
-                        <li>
-                            <a href="info.html">Информация</a>
-                        </li>
-                        <li>
-                            <a href="news.html">Новости</a>
-                        </li>
-                        <li>
-                            <a href="price.html">Прайс-лист</a>
-                        </li>
-                        <li>
-                            <a href="catalog.html">Магазин</a>
-                        </li>
-                        <li>
-                            <a href="contacts.html">Контакты</a>
-                        </li>
+                        <li><a href="info.html">Информация</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="price.html">Прайс-лист</a></li>
+                        <li><a href="catalog.html">Магазин</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                     <ul class="user-navigation">
-                        <li>
-                            <a class="login-link" href="login.html">Вход</a>
-                        </li>
+                        <li><a class="login-link" href="login.html">Вход</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,14 +51,12 @@
                 </li>
                 <li class="feature-item">
                     <h3>Дорого</h3>
-                    <p>Наши мастера — профессионалы своего дела и не могут стоить дешево. К тому же, разве цена не дает определенный
-                        статус?</p>
+                    <p>Наши мастера — профессионалы своего дела и не могут стоить дешево. К тому же, разве цена не дает определенный статус?</p>
                 </li>
             </ul>
         </section>
 
         <div class="index-columns">
-
             <section class="news">
                 <h2>Новости</h2>
                 <ul class="news-list">
@@ -78,8 +65,7 @@
                         <time datetime="2016-01-11">11 января</time>
                     </li>
                     <li class="news-item">
-                        <p>В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил
-                            наши стройные ряды</p>
+                        <p>В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель множества титулов и наград пополнил наши стройные ряды</p>
                         <time datetime="2016-01-18">18 января</time>
                     </li>
                 </ul>
@@ -98,11 +84,9 @@
                     <button class="button gallery-button gallery-button-next" type="button">Вперед</button>
                 </div>
             </section>
-
         </div>
 
         <div class="index-columns">
-
             <section class="contacts">
                 <h2>Контактная информация</h2>
                 <p>
@@ -142,7 +126,6 @@
                     <button class="button" type="submit">Отправить</button>
                 </form>
             </section>
-
         </div>
 
     </main>
@@ -230,90 +213,7 @@
         <button class="modal-close" type="button">Закрыть</button>
     </section>
 
-    <script>
-        var link = document.querySelector(".login-link");
-
-        var popup = document.querySelector(".modal-login");
-        var close = popup.querySelector(".modal-close");
-
-        var form = popup.querySelector("form");
-        var login = popup.querySelector("[name=login]");
-        var password = popup.querySelector("[name=password]");
-
-        var isStorageSupport = true;
-        var storage = "";
-
-        try {
-            storage = localStorage.getItem("login");
-        } catch (err) {
-            isStorageSupport = false;
-        }
-
-        link.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            popup.classList.add("modal-show");
-
-            if (storage) {
-                login.value = storage;
-                password.focus();
-            } else {
-                login.focus();
-            }
-        });
-
-        close.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            popup.classList.remove("modal-show");
-            popup.classList.remove("modal-error");
-        });
-
-        form.addEventListener("submit", function (evt) {
-            if (!login.value || !password.value) {
-                evt.preventDefault();
-                popup.classList.remove("modal-error");
-                popup.offsetWidth = popup.offsetWidth;
-                popup.classList.add("modal-error");
-            } else {
-                if (isStorageSupport) {
-                    localStorage.setItem("login", login.value);
-                }
-            }
-        });
-
-        window.addEventListener("keydown", function (evt) {
-            if (evt.keyCode === 27) {
-                evt.preventDefault();
-                if (popup.classList.contains("modal-show")) {
-                    popup.classList.remove("modal-show");
-                    popup.classList.remove("modal-error");
-                }
-            }
-        });
-
-        var mapLink = document.querySelector(".contacts-button-map");
-
-        var mapPopup = document.querySelector(".modal-map");
-        var mapClose = mapPopup.querySelector(".modal-close");
-
-        mapLink.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            mapPopup.classList.add("modal-show");
-        });
-
-        mapClose.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            mapPopup.classList.remove("modal-show");
-        });
-
-        window.addEventListener("keydown", function (evt) {
-            if (evt.keyCode === 27) {
-                evt.preventDefault();
-                if (mapPopup.classList.contains("modal-show")) {
-                    mapPopup.classList.remove("modal-show");
-                }
-            }
-        });
-    </script>
+    <script src="js/script.js"></script>
 
 </body>
 
