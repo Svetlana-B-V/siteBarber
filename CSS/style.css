@@ -1,4 +1,59 @@
 /* ============================================================
+СТРАНИЦЫ-КАРКАСЫ
+============================================================ */
+.inner-page-container {
+margin-bottom: 55px;
+}
+.page-title {
+margin: 0;
+margin-bottom: 15px;
+padding: 0;
+font-size: var(--fs-xxl);
+line-height: 1.2;
+}
+/* Хлебные крошки */
+.breadcrumbs {
+display: flex;
+justify-content: flex-start;
+flex-wrap: wrap;
+padding: 0;
+margin: 0;
+list-style: none;
+}
+.breadcrumbs li {
+position: relative;
+margin-right: 42px;
+}
+.breadcrumbs li:last-child {
+margin-right: 0;
+}
+.breadcrumbs li::after {
+content: "";
+position: absolute;
+top: 7px;
+right: -25px;
+width: 8px;
+height: 8px;
+background-color: #000000;
+transform: rotate(45deg);
+border-radius: 1px;
+}
+.breadcrumbs a {
+color: #000000;
+}
+.breadcrumbs a:hover,
+.breadcrumbs a:focus {
+color: var(--accent-dk);
+text-decoration: underline;
+}
+.breadcrumbs-current {
+color: #aba9a7;
+}
+.breadcrumbs-current::after {
+display: none;
+}
+
+/* ============================================================
    ПОЯВЛЕНИЕ ЭЛЕМЕНТОВ ПРИ ПРОКРУТКЕ
    ============================================================ */
 
